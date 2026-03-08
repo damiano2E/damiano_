@@ -1,18 +1,18 @@
 #include <Servo.h>
 
 Servo myservo;
-// 0 = posizione 0 gradi, 1 = posizione 180 gradi
-// Iniziamo a 1, perché il servo parte da 180
+// 0 = posizione 0 gradi (ala chiusa), 1 = posizione 60 gradi, (ala aperta)
+// Iniziamo a 1, perché il servo parte da 60
 int statoServo = 1; 
 
 void setup() {
   myservo.attach(9);
   
-  // Posizione di partenza: 180 gradi
+  // Posizione di partenza: 60 gradi
   myservo.write(60); 
   
   Serial.begin(9600);
-  Serial.println("--- DRS available, you can use it within 1 second gap from the car in front in the DRS zones ---");
+  Serial.println("--- SM available, you can use it in the SM zones ---");
   Serial.println("SM available, press 's' to open it, you can use in the SM zones on track");
 }
 
